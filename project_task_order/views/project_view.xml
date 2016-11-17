@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Sort tasks -->
+
+        <record id="view_sort_tasks_by_project" model="ir.ui.view">
+            <field name="name">Sort tasks by project priority</field>
+            <field name="model">project.task.sort</field>
+            <field name="arch" type="xml">
+                <form string="Sort Parameters">
+                    <p>
+                        Задачи будут отсортированы по приоритету проектов. Желаете произвести сортировку?
+                    </p>
+                    <footer>
+                        <button name="change_seq_tasks" string="Сортировать" type="object" class="btn-primary"/>
+                        <button string="Отменить" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sort_tasks_by_project" model="ir.actions.act_window">
+            <field name="name">Sort Tasks</field>
+            <field name="res_model">project.task.sort</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+         </record>
+
+        <menuitem action="action_sort_tasks_by_project" id="menu_sort_tasks_by_project"
+                  parent="project.menu_project_management" sequence="3"/>
+
+
+    </data>
+</openerp>
