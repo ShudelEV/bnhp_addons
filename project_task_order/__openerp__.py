@@ -3,7 +3,7 @@
 #
 ##############################################################################
 {
-    'name': 'Order by project sequence',
+    'name': 'Order tasks by project sequence',
     'version': '1.0.0',
     'category': 'Projects & Services',
     'sequence': 16,
@@ -13,10 +13,9 @@
     ],
     'depends': [
         'project',
-        'project_section',
     ],
     'data': [
-        'views/project_view.xml',
+        'views/project_task_wizard_view.xml',
     ],
     'demo': [
     ],
