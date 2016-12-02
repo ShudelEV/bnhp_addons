@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+            id="report_project_task"
+            string="Tasks"
+            model="project.task"
+            report_type="qweb-pdf"
+            name="report_project_task_template"
+        />
+
+        <template id="report_project_task_template">
+            <!--does the setup of supporting HTML document-->
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--handles the report header and footer-->
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <!-- Report page content -->
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--Form and Tree View Inherit-->
+        <record id="project_add_entity_form" model="ir.ui.view">
+            <field name="name">project.project.entity.form</field>
+            <field name="model">project.project</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <div name="options_active" position="before">
+                    <h2>
+                        <field name="entity_id" placeholder="Choose entity of project" widget="many2one" />
+                    </h2>
+                </div>
+            </field>
+        </record>
+
+        <!--
+        <record id="project_add_entity_tree" model="ir.ui.view">
+            <field name="name">project.project.entity.tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="entity_id" string="Entity" />
+                </field>
+            </field>
+        </record>
+        -->
+
+        <!-- Project Kanban View Inherit -->
+        <record id="view_project_kanban_inherit" model="ir.ui.view">
+            <field name="name">project.project.entity.kanban</field>
+            <field name="model">project.project</field>
+            <field name="type">kanban</field>
+            <field name="inherit_id" ref="project.view_project_kanban" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="entity_id" />
+                </field>
+                <div class="o_primary" position="after">
+                    <hr />
+                    <em><field name="entity_id" /></em>
+                </div>
+            </field>
+        </record>
+
+        <!--Search View Inherit-->
+        <record id="view_project_project_filter" model="ir.ui.view">
+            <field name="name">project.project.entity.select</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="entity_id" string="Project Entity" />
+                </field>
+                <filter position="after">
+                    <separator/>
+                    <filter name="entity_id" string="With Entity" domain="[('entity_id','!=',False)]" />
+                    <filter name="entity_id" string="Without Entity" domain="[('entity_id','=',False)]" />
+                    <filter string="Entity" name="projects_entity"
+                            icon="terp-folder-violet" domain="[]"
+                            context="{'group_by':'entity_id'}"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
