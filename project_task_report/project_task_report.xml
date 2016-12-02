@@ -4,25 +4,88 @@
 
         <report
             id="report_project_task"
-            string="Tasks"
+            string="Print Task Report"
             model="project.task"
             report_type="qweb-pdf"
-            name="report_project_task_template"
+            name="project_task_report.report_project_task_template"
         />
 
         <template id="report_project_task_template">
-            <!--does the setup of supporting HTML document-->
             <t t-call="report.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <!--handles the report header and footer-->
-                    <t t-call="report.external_layout">
-                        <div class="page">
-                            <!-- Report page content -->
+                <!--handles the report header and footer-->
+                <t t-call="report.internal_layout">
+                    <div class="page">
+
+                        <!-- Report page content -->
+                        <h2>Задачи</h2>
+                        <div class="row mt32 mb32">
+                            <div class="col-xs-3">
+                                <!--<strong>User Name</strong>:<br/>-->
+                                <strong>Имя пользователя</strong>:<br/>
+                                <span t-field="user.name"/>
+                            </div>
+                            <!--<div class="col-xs-3">-->
+                                <!--&lt;!&ndash;<strong>Print date</strong>:<br/>&ndash;&gt;-->
+                                <!--<strong>Время печати</strong>:<br/>-->
+                                <!--<t t-esc="time.strftime('%a, %d %b %Y %H:%M')"/>-->
+                            <!--</div>-->
                         </div>
-                    </t>
+
+                        <table class="table table-bordered">
+                            <!-- Table header -->
+                            <tr>
+                                <!--<th>Task Name</th>-->
+                                <!--<th>Planned Hours</th>-->
+                                <!--<th>Spent Hours</th>-->
+                                <!--<th>Remaining Hours</th>-->
+                                <!--<th>Assign to</th>-->
+                                <!--<th>Assign Date</th>-->
+                                <!--<th>Deadline</th>-->
+                                <!--<th>Stage</th>-->
+                                <th>Название задачи</th>
+                                <th>Планир. время</th>
+                                <th>Затрачено часов</th>
+                                <th>Осталось часов</th>
+                                <th>Назначено</th>
+                                <th>Дата назначения</th>
+                                <th>Сделать до</th>
+                                <th>Стадия</th>
+                            </tr>
+
+                            <!-- Table rows -->
+                            <tbody>
+                                <t t-set="project_info" t-value="docs.get_project_info() + [(False, 'Без проекта')]"/>
+                                <t t-foreach="project_info" t-as="pr">
+                                    <!--Проверить проект без задач-->
+                                    <t t-set="count" t-value="0"/>
+                                    <t t-foreach="docs" t-as="t">
+                                        <t t-if="pr[0] == t.project_id.id">
+                                            <t t-set="count" t-value="count+1"/>
+                                        </t>
+                                    </t>
+                                    <!--Print groups by projects-->
+                                    <tr t-if="count">
+                                        <td colspan="100">Проект: <strong t-esc="pr[1]"/>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="docs" t-as="t">
+                                        <tr t-if="pr[0]==t.project_id.id">
+                                            <td><span t-field="t.name"/></td>
+                                            <td><span t-field="t.planned_hours"/></td>
+                                            <td><span t-field="t.effective_hours"/></td>
+                                            <td><span t-field="t.remaining_hours"/></td>
+                                            <td><span t-field="t.user_id"/></td>
+                                            <td><span t-field="t.date_assign"/></td>
+                                            <td><span t-field="t.date_deadline"/></td>
+                                            <td><span t-field="t.stage_id"/></td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
                 </t>
             </t>
         </template>
-
     </data>
 </openerp>

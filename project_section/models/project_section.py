@@ -14,24 +14,24 @@ class ProjectSection(models.Model):
 
     @api.one
     def _get_sections_list(self):
-        _logger.info("START _get_sections_list")
+        # _logger.info("START _get_sections_list")
         project = self.project_id.id
-        _logger.info(str(project))
+        # _logger.info(str(project))
         sections = self.env['project.section'].search([('project_id', '=', project)])
         ids = []
         for rec in sections:
             ids.append(rec.project_section_id.id)
-        _logger.info(str(ids))
+        # _logger.info(str(ids))
         return ids
 
     # не работает фильтр:
 
     @api.onchange('project_section_id')
     def _get_domain(self):
-        _logger.info("START _get_domain")
+        # _logger.info("START _get_domain")
         ids = self._get_sections_list()[0]
         res = {'domain':{'project_section_id':[('id', 'not in', ids)]}}
-        _logger.info(str(ids))
+        # _logger.info(str(ids))
         return res
 
     # list_of_used_sections = fields.Char(string='Test', compute='_get_sections_list')

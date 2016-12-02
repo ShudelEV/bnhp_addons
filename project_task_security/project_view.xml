@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--Makes invisible the field "privacy_visibility"-->
+        <record id="edit_project_project_form" model="ir.ui.view">
+            <field name="name">project.project.form.edit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <field name="privacy_visibility" position="replace" invisible="1">
+                    <field name="privacy_visibility" invisible="1" />
+                </field>
+            </field>
+        </record>
+
+        <!--Custom filters-->
+        <!--
+        <record id="view_project_search_form" model="ir.ui.view">
+            <field name="name">project.project.search.form.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter" />
+            <field name="arch" type="xml">
+               <filter position="before">
+                   <filter name="gip" string="GIP" domain="[('project_id.user_id', '=', user.id)]" />
+               </filter>
+            </field>
+        </record>
+        -->
+
+        <!--Add deparment to task form-->
+        <record id="view_project_task_form" model="ir.ui.view">
+            <field name="name">project.task.form2</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2" />
+            <field name="arch" type="xml">
+               <field name="user_id" position="after">
+                    <field name="department_id" string="Department" options='{"no_open": True}' invisible="1" />
+               </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

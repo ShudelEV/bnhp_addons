@@ -9,7 +9,7 @@
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                    <page string="Разделы проекта">
+                    <page string="Project Section">
                         <field name="section_line">
                             <tree string="Section Lines">
                                   <!--editable="bottom">-->

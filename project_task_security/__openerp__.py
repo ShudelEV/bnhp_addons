@@ -3,24 +3,23 @@
 #
 ##############################################################################
 {
-    'name': 'Order tasks by project sequence',
+    'name': 'Project Tasks Sequrity',
     'version': '1.0.0',
     'category': 'Project Management',
     'sequence': 16,
     'summary': '',
     'author':  'ShEV',
-    'images': [
-    ],
+    'images': [],
     'depends': [
         'project',
+        'hr'
     ],
     'data': [
-        'wizard/project_task_wizard_view.xml',
+        'sequrity/project_security.xml',
+        'project_view.xml',
     ],
-    'demo': [
-    ],
-    'test': [
-    ],
+    'demo': [],
+    'test': [],
     'installable': True,
     'auto_install': False,
     'application': False,

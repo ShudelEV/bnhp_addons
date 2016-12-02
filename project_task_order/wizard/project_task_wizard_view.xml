@@ -21,7 +21,7 @@
         </record>
 
         <record id="action_sort_tasks_by_project" model="ir.actions.act_window">
-            <field name="name">Sort The Tasks</field>
+            <field name="name">Sort Tasks</field>
             <field name="res_model">project.task.sort</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
@@ -29,7 +29,7 @@
          </record>
 
         <menuitem action="action_sort_tasks_by_project" id="menu_sort_tasks_by_project"
-                  parent="project.menu_project_management" sequence="11"/>
+                  parent="project.menu_project_config" sequence="11"/>
 
     </data>
 </openerp>

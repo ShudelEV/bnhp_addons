@@ -3,29 +3,23 @@
 #
 ##############################################################################
 {
-    'name': 'Project Entity',
+    'name': 'Task Report',
     'version': '1.0.0',
     'category': 'Project Management',
     'sequence': 15,
     'summary': '',
     'description': """
-Project Entity
+Project Task Report
 ==================
     """,
     'author':  'ShEV',
     'images': [],
     'depends': [
         'project',
+        'project_timesheet',
     ],
     'data': [
-        # 'report/project_report_view.xml',
-        # 'security/ir.model.access.csv',
-        'views/project_entity_view.xml',
-        'views/project_view.xml',
+        'project_task_report.xml',
     ],
-    'demo': [],
-    'test': [],
     'installable': True,
-    'auto_install': False,
-    'application': False,
 }
