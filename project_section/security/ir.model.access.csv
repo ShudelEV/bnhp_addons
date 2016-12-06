@@ -1,3 +1,5 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_project_section_user,project.section.user,model_project_section,project.group_project_user,1,0,0,0
-access_project_section_manager,project.section.manager,model_project_section,project.group_project_manager,1,1,1,1
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_project_section_manager","project.section.manager","project_section.model_project_section","project.group_project_manager",True,True,True,True
+"access_project_section_user","project.section.user","project_section.model_project_section","project.group_project_user",True,False,False,False
+"access_project_section_list_manager","project.section.list.manager","project_section.model_project_section_list","project.group_project_manager",True,True,True,True
+"access_project_section_list_user","project.section.list.user","project_section.model_project_section_list","project.group_project_user",True,False,False,False

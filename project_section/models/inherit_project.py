@@ -25,7 +25,7 @@ class ProjectProject(models.Model):
                 'amount_total_cost': project.currency_id.round(amount_total_cost),
             })
 
-    amount_total_labor = fields.Monetary(string='Полная трудоемкость', store=True,
+    amount_total_labor = fields.Monetary(string='Full laboriousness', store=True,
                                       readonly=True, compute='_amount_all')
-    amount_total_cost = fields.Monetary(string='Полная план. стоимость', store=True,
+    amount_total_cost = fields.Monetary(string='Full planned cost', store=True,
                                       readonly=True, compute='_amount_all')

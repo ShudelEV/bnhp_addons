@@ -14,6 +14,6 @@ class ProjectSectionList(models.Model):
         ('short_name_uniq', 'UNIQUE (short_name)', 'Short name must be unique.')
     ]
 
-    long_name = fields.Char(string='Название', required=True, size=200)
-    short_name = fields.Char(string='Сокращение', required=True, size=50)
-    sequence = fields.Integer('Порядок')
+    long_name = fields.Char(string='Long Name', required=True, size=200)
+    short_name = fields.Char(string='Short Name', required=True, size=50)
+    sequence = fields.Integer('Sequence')

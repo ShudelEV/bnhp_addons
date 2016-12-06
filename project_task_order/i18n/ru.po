@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base
+#
+# Translators:
+# Alex Puchkov <ap@alteco.co>, 2016
+# Andrey Samorukov <andrey.samorukov@me.com>, 2016
+# Artur Komishenko <Archi1792@gmail.com>, 2016
+# Denis Trepalin <zekarious@gmail.com>, 2015
+# Evgeny <transingularity@gmail.com>, 2016
+# Gennady Marchenko <gennadym@gmail.com>, 2016
+# Max Belyanin <maxbelyanin@gmail.com>, 2015
+# Max Belyanin <maxbelyanin@gmail.com>, 2015
+# Sergey Vilizhanin <sv@grimmette.ru>, 2016
+# Svetlana Pogrebniak <sp@aifil.ru>, 2016
+# Sergey Vilizhanin <sv@grimmette.ru>, 2015-2016
+# Viktor Pogrebniak <vp@aifil.ru>, 2016
+# Viktor Pogrebniak <vp@aifil.ru>, 2016
+# Владимир Куряев <istercul@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-05 12:29+0000\n"
+"PO-Revision-Date: 2016-12-05 15:31+0300\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_create_date
+msgid "Created on"
+msgstr "Создан"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_display_name
+msgid "Display Name"
+msgstr "Отображаемое Имя"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort___last_update
+msgid "Last Modified on"
+msgstr "Последнее Изменение"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_write_uid
+msgid "Last Updated by"
+msgstr "Последний раз обновлено"
+
+#. module: project_task_order
+#: model:ir.model.fields,field_description:project_task_order.field_project_task_sort_write_date
+msgid "Last Updated on"
+msgstr "Последний раз обновлено"
+
+#. module: project_task_order
+#: model:ir.model,name:project_task_order.model_project_project
+msgid "Project"
+msgstr "Проект"
+
+#. module: project_task_order
+#: model:ir.ui.view,arch_db:project_task_order.view_sort_tasks_by_project
+msgid "Sort Parameters"
+msgstr "Параметры сортировки"
+
+#. module: project_task_order
+#: model:ir.actions.act_window,name:project_task_order.action_sort_tasks_by_project
+#: model:ir.model,name:project_task_order.model_project_task_sort
+#: model:ir.ui.menu,name:project_task_order.menu_sort_tasks_by_project
+msgid "Sort Tasks"
+msgstr "Сортировать задачи"

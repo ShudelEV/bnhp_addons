@@ -2,7 +2,7 @@
 ##############################################################################
 #
 ##############################################################################
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 
 
 class ProjectTask(models.Model):

@@ -19,15 +19,15 @@
                 </field>
                 <field name="progress" position="after">
                     <field name="w_rate"/>
-                    <field name="lab" widget="float_time" sum="Всего часов:"/>
-                    <field name="pl_cost" sum="Итого:"/>
-                    <field name="fact_cost" sum="Итого:"/>
+                    <field name="lab" widget="float_time" sum="Total hours:"/>
+                    <field name="pl_cost" sum="Total:"/>
+                    <field name="fact_cost" sum="Total:"/>
                 </field>
             </field>
         </record>
 
          <record id="open_task_section_form" model="ir.actions.act_window">
-            <field name="name">Реестр задач</field>
+            <field name="name">Register of Tasks</field>
             <field name="res_model">project.task</field>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_task_section_tree2_inherited"/>

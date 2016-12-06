@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_project_entity_manager","project.entity.manager","project_entity.model_project_entity","project.group_project_manager",True,True,True,True
+"access_project_entity_user","project.entity.user","project_entity.model_project_entity","project.group_project_user",True,False,False,False
+

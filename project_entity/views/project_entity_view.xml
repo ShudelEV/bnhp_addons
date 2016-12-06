@@ -100,7 +100,7 @@
             </field>
         </record>
 
-        <menuitem action="action_project_entity_form" id="menu_project_entity_form" name="Справочник объектов"
+        <menuitem action="action_project_entity_form" id="menu_project_entity_form" name="Entities"
                   sequence="50" parent="project.menu_project_config"/>
 
     </data>

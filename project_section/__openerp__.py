@@ -21,8 +21,7 @@ Add project sections
         'decimal_precision',
     ],
     'data': [
-        # 'report/project_report_view.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/project_view.xml',
         # 'views/project_data.xml',
         'views/project_section_view.xml',

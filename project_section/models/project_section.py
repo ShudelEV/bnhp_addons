@@ -34,25 +34,21 @@ class ProjectSection(models.Model):
         # _logger.info(str(ids))
         return res
 
-    # list_of_used_sections = fields.Char(string='Test', compute='_get_sections_list')
     project_section_id = fields.Many2one('project.section.list',
-                                         string='Раздел', ondelete='restrict', index=True, required=True)
-    project_id = fields.Many2one('project.project', string='Проект',
+                                         string='Section', ondelete='restrict', index=True, required=True)
+    project_id = fields.Many2one('project.project', string='Project',
                                  required=True, ondelete='cascade')
     project_task_ids = fields.One2many('project.task', 'section_id',
-                                       string='Задача', copy='False')
+                                       string='Task', copy='False')
     #monetary field, wage-rate/ставка
     # currency_id = fields.Many2one('res.currency', string='Currency')
-    wage_rate = fields.Float('Ставка',
+    wage_rate = fields.Float('Rate',
                                 # currency_field='currency_id',
-                                help="Стоимость данного раздела")
-    #Laboriousness/трудозатраты
-    labor = fields.Float(digits=(6, 2), string="Трудоемкость", help="Трудоемкость данного раздела")
-    #Плановая стоимость (Computed fields)
-    planned_cost = fields.Float(string="План. стоимость", compute='_taken_cost')
+                                help="Cost of this section")
+    labor = fields.Float(digits=(6, 2), string="Laboriousness", help="Laboriousness of this section")
+    planned_cost = fields.Float(string="Planned cost", compute='_taken_cost')
 
     @api.depends('wage_rate', 'labor')
     def _taken_cost(self):
         for record in self:
             record.planned_cost = record.wage_rate * record.labor
-

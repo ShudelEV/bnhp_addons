@@ -18,8 +18,7 @@ Project Entity
         'project',
     ],
     'data': [
-        # 'report/project_report_view.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/project_entity_view.xml',
         'views/project_view.xml',
     ],

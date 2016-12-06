@@ -14,7 +14,6 @@
                             <tree string="Section Lines">
                                   <!--editable="bottom">-->
                                 <field name="project_section_id" options="{'no_create': True}"/>
-                                <!--<field name="test"/>-->
                                 <field name="labor"/>
                                 <field name="wage_rate"/>
                                 <field name="planned_cost"/>
@@ -39,11 +38,6 @@
                 <field name="project_id" position="after">
                     <field name="section_id"/>
                 </field>
-                <!--<filter position="after">-->
-                    <!--<filter string="Section" name="section_for_this_project"-->
-                            <!--icon="terp-folder-violet" domain="[]"-->
-                            <!--context="{'group_by':'section_id'}"/>-->
-                <!--</filter>-->
             </field>
         </record>
 

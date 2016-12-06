@@ -3,22 +3,22 @@
     <data>
 
         <report
-            id="report_project_task"
-            string="Print Task Report"
+            id="report_project_task2"
+            string="Print Task Report2"
             model="project.task"
             report_type="qweb-pdf"
-            name="project_task_report.report_project_task_template"
+            name="project_task_report.report_project_task_template2"
         />
 
         <!-- Main template -->
-        <template id="report_project_task_template">
+        <template id="report_project_task_template2">
             <t t-call="report.html_container">
-                <t t-call="project_task_report.report_todo_task_doc" t-lang="user.lang"/>
+                <t t-call="project_task_report.report_todo_task_doc2" t-lang="user.lang"/>
             </t>
         </template>
 
         <!-- Translatable template -->
-        <template id="report_todo_task_doc">
+        <template id="report_todo_task_doc2">
             <t t-call="report.internal_layout">
                 <div class="page">
                 <!-- Report page content -->

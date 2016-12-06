@@ -1,0 +1,274 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base
+#
+# Translators:
+# Alex Puchkov <ap@alteco.co>, 2016
+# Andrey Samorukov <andrey.samorukov@me.com>, 2016
+# Artur Komishenko <Archi1792@gmail.com>, 2016
+# Denis Trepalin <zekarious@gmail.com>, 2015
+# Evgeny <transingularity@gmail.com>, 2016
+# Gennady Marchenko <gennadym@gmail.com>, 2016
+# Max Belyanin <maxbelyanin@gmail.com>, 2015
+# Max Belyanin <maxbelyanin@gmail.com>, 2015
+# Sergey Vilizhanin <sv@grimmette.ru>, 2016
+# Svetlana Pogrebniak <sp@aifil.ru>, 2016
+# Sergey Vilizhanin <sv@grimmette.ru>, 2015-2016
+# Viktor Pogrebniak <vp@aifil.ru>, 2016
+# Viktor Pogrebniak <vp@aifil.ru>, 2016
+# Владимир Куряев <istercul@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-03 11:29+0000\n"
+"PO-Revision-Date: 2016-12-03 15:40+0300\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_active
+msgid "Active"
+msgstr "Активен"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Address"
+msgstr "Адрес"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_entity_search_form
+msgid "Archived"
+msgstr "Помещено в архив"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.project_add_entity_form
+msgid "Choose entity of project"
+msgstr "Выберите объект проекта"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_city
+#: model:ir.ui.view,arch_db:project_entity.view_entity_search_form
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "City"
+msgstr "Город"
+
+#. module: project_entity
+#: model:ir.actions.act_window,help:project_entity.action_project_entity_form
+msgid "Click to add a project entity in your book."
+msgstr "Кликните, чтобы добавить объект в Ваш справочник"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_company_id
+#: model:ir.ui.view,arch_db:project_entity.view_entity_search_form
+msgid "Company"
+msgstr "Компания"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_country_id
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Country"
+msgstr "Страна"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_create_date
+msgid "Created on"
+msgstr "Создан"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_display_name
+msgid "Display Name"
+msgstr "Отображаемое Имя"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_email
+msgid "Email"
+msgstr "Email"
+
+#. module: project_entity
+#: model:ir.ui.menu,name:project_entity.menu_project_entity_form
+msgid "Entities"
+msgstr "Объекты"
+
+#. module: project_entity
+#: model:ir.actions.act_window,name:project_entity.action_project_entity_form
+#: model:ir.model,name:project_entity.model_project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_project_entity_id
+#: model:ir.ui.view,arch_db:project_entity.view_entity_search_form
+#: model:ir.ui.view,arch_db:project_entity.view_project_project_filter
+msgid "Entity"
+msgstr "Объект"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_fax
+msgid "Fax"
+msgstr "Факс"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_entity_search_form
+msgid "Group By"
+msgstr "Группировать по"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_image
+msgid "Image"
+msgstr "Изображение"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Internal Notes"
+msgstr "Внутренние заметки"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Internal note..."
+msgstr "Внутреннее примечание..."
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity___last_update
+msgid "Last Modified on"
+msgstr "Последнее Изменение"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_write_uid
+msgid "Last Updated by"
+msgstr "Последний раз обновлено"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_write_date
+msgid "Last Updated on"
+msgstr "Последний раз обновлено"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_image_medium
+msgid "Medium-sized image"
+msgstr "Изображение средних размеров"
+
+#. module: project_entity
+#: model:ir.model.fields,help:project_entity.field_project_entity_image_medium
+msgid ""
+"Medium-sized image of this model. It is automatically resized as a 128x128px "
+"image, with aspect ratio preserved. Use this field in form views or some "
+"kanban views."
+msgstr ""
+"Фото контакта среднего размера. Оно автоматически принимает размер 128х128 "
+"пикселей с сохранением соотношения сторон. Используйте это поле в видах форм "
+"или в некоторых видах канбан."
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_name
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Name"
+msgstr "Наименование"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_comment
+msgid "Notes"
+msgstr "Заметки"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: project_entity
+#: model:ir.model,name:project_entity.model_project_project
+msgid "Project"
+msgstr "Проект"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_tree
+#: model:ir.ui.view,arch_db:project_entity.view_project_project_filter
+msgid "Project Entity"
+msgstr "Объект проекта"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_project_ids
+msgid "Project ids"
+msgstr "Project ids"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Projects"
+msgstr "Проекты"
+
+#. module: project_entity
+#: model:ir.model.fields,help:project_entity.field_project_entity_image_small
+msgid ""
+"Small sized image of this model. It is automatically resized as a 64x64px "
+"image, with aspect ratio preserved. Use this field in form views or some "
+"kanban views."
+msgstr ""
+"Фото контакта среднего размера. Оно автоматически принимает размер 64х64 "
+"пикселей с сохранением соотношения сторон. Используйте это поле в видах форм "
+"или в некоторых видах канбан."
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_image_small
+msgid "Small-sized image"
+msgstr "Маленькое изображение"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_state_id
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "State"
+msgstr "Регион"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_street
+msgid "Street"
+msgstr "Улица"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Street 2..."
+msgstr "Улица 2..."
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "Street..."
+msgstr "Улица..."
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_street2
+msgid "Street2"
+msgstr "Улица2"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_project_filter
+msgid "With Entity"
+msgstr "Имееют объект"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_project_filter
+msgid "Without Entity"
+msgstr "Без объекта"
+
+#. module: project_entity
+#: model:ir.ui.view,arch_db:project_entity.view_project_entity_form
+msgid "ZIP"
+msgstr "Индекс"
+
+#. module: project_entity
+#: model:ir.model.fields,field_description:project_entity.field_project_entity_zip
+msgid "Zip"
+msgstr "Индекс"

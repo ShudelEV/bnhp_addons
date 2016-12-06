@@ -29,9 +29,9 @@
                             <field name="project_section_id" />
                         </group>
                         <group>
-                            <field name="labor" sum="Сумма" />
+                            <field name="labor" sum="Sum" />
                             <field name="wage_rate" />
-                            <field name="planned_cost" sum="Сумма" />
+                            <field name="planned_cost" sum="Sum" />
                         </group>
                     </group>
                 </form>
@@ -69,42 +69,22 @@
             <field name="model">project.section</field>
             <field name="arch" type="xml">
                 <search string="Section Analysis">
-                    <!--<field name="date_start"/>-->
-                    <!--<field name="date_end"/>-->
-                    <!--<field name="date_deadline"/>-->
-                    <!--<field name="date_last_stage_update"/>-->
                     <field name="project_section_id"/>
                     <field name="project_id"/>
                     <field name="project_task_ids"/>
-
-                    <!--<separator/>-->
-                    <!--<filter string="New" name="new" domain="[('stage_id.sequence', '&lt;=', 1)]"/>-->
-
                     <group expand="1" string="Group By">
                         <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
                         <filter string="Task" context="{'group_by':'project_task_ids'}"/>
-                        <!--<filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>-->
-                        <!--<filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>-->
-                        <!--<filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>-->
-                        <!--<separator/>-->
-                        <!--<filter string="Assignation Month" context="{'group_by':'date_start:month'}" help="Creation Date"/>-->
                     </group>
                 </search>
             </field>
         </record>
 
         <record id="open_section_form" model="ir.actions.act_window">
-            <field name="name">Разделы</field>
+            <field name="name">Sections</field>
             <field name="res_model">project.section</field>
             <field name="view_mode">tree,pivot</field>
             <field name="view_id" ref="section_view_tree"/>
-            <!--<field name="context">{-->
-                <!--'group_by_no_leaf':1,-->
-                <!--'group_by':[],-->
-                <!--'search_default_project_id': [active_id],-->
-                <!--'default_project_id': active_id,-->
-            <!--}-->
-            <!--</field>-->
         </record>
 
         <menuitem action="open_section_form"
