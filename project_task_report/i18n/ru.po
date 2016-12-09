@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-03 16:54+0000\n"
-"PO-Revision-Date: 2016-12-03 20:02+0300\n"
+"POT-Creation-Date: 2016-12-09 12:46+0000\n"
+"PO-Revision-Date: 2016-12-09 15:47+0300\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
 "Language: ru\n"
@@ -36,6 +36,7 @@ msgstr ""
 
 #. module: project_task_report
 #: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc
+#: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc2
 msgid "<strong>User Name</strong>:<br/>"
 msgstr "<strong>Имя пользователя</strong>:<br/>"
 
@@ -55,14 +56,24 @@ msgid "Deadline"
 msgstr "Срок"
 
 #. module: project_task_report
+#: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc2
+msgid "Employee:"
+msgstr "Сотрудник:"
+
+#. module: project_task_report
 #: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc
 msgid "Planned Hours"
-msgstr "Запланир. часы"
+msgstr "Запланированные часы"
 
 #. module: project_task_report
 #: model:ir.actions.report.xml,name:project_task_report.report_project_task
 msgid "Print Task Report"
-msgstr "Отчет по задачам"
+msgstr "Отчёт по задачам"
+
+#. module: project_task_report
+#: model:ir.actions.report.xml,name:project_task_report.report_project_task2
+msgid "Print Task Report 2"
+msgstr "Отчет \"Загрузка сотрудников\""
 
 #. module: project_task_report
 #: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc
@@ -96,5 +107,6 @@ msgstr "Название задачи"
 
 #. module: project_task_report
 #: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc
+#: model:ir.ui.view,arch_db:project_task_report.report_todo_task_doc2
 msgid "Tasks"
 msgstr "Задачи"

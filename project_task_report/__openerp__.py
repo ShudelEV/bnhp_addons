@@ -17,9 +17,11 @@ Project Task Report
     'depends': [
         'project',
         'project_timesheet',
+        'project_task_default_stage',
     ],
     'data': [
         'project_task_report.xml',
+        'project_task_report2.xml',
     ],
     'installable': True,
 }

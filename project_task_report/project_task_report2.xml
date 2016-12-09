@@ -4,7 +4,7 @@
 
         <report
             id="report_project_task2"
-            string="Print Task Report2"
+            string="Print Task Report 2"
             model="project.task"
             report_type="qweb-pdf"
             name="project_task_report.report_project_task_template2"
@@ -22,61 +22,37 @@
             <t t-call="report.internal_layout">
                 <div class="page">
                 <!-- Report page content -->
-                <h2>Tasks</h2>
-                <div class="row mt32 mb32">
-                    <div class="col-xs-3">
-                        <strong>User Name</strong>:<br/>
-                        <span t-field="user.name"/>
+                    <h2>Tasks</h2>
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-3">
+                            <strong>User Name</strong>:<br/>
+                            <span t-field="user.name"/>
+                        </div>
+                        <!--<div class="col-xs-3">-->
+                            <!--&lt;!&ndash;<strong>Print date</strong>:<br/>&ndash;&gt;-->
+                            <!--<t t-esc="time.strftime('%a, %d %b %Y %H:%M')"/>-->
+                        <!--</div>-->
                     </div>
-                    <!--<div class="col-xs-3">-->
-                        <!--&lt;!&ndash;<strong>Print date</strong>:<br/>&ndash;&gt;-->
-                        <!--<t t-esc="time.strftime('%a, %d %b %Y %H:%M')"/>-->
-                    <!--</div>-->
-                </div>
-                <table class="table table-bordered">
-                    <!-- Table header -->
-                    <tr>
-                        <th>Task Name</th>
-                        <th>Planned Hours</th>
-                        <th>Spent Hours</th>
-                        <th>Remaining Hours</th>
-                        <th>Assign to</th>
-                        <th>Assign Date</th>
-                        <th>Deadline</th>
-                        <th>Stage</th>
-                    </tr>
-                    <!-- Table rows -->
-                    <tbody>
-                        <t t-set="project_info" t-value="docs.get_project_info() + [(False, 'Have no Project')]"/>
-                        <t t-foreach="project_info" t-as="pr">
-                            <!--Проверить проект без задач-->
-                            <t t-set="count" t-value="0"/>
-                            <t t-foreach="docs" t-as="t">
-                                <t t-if="pr[0] == t.project_id.id">
-                                    <t t-set="count" t-value="count+1"/>
-                                </t>
+                    <table class="table table-striped">
+                        <!-- Table header -->
+                        <tr>
+                            <th class="success">Employee:</th>
+                            <t t-foreach="docs[0].get_task_recs(doc_ids)[0][1:]" t-as="head_rec">
+                                <th class="info"><span t-esc="head_rec"/></th>
                             </t>
-                            <!--Print groups by projects-->
-                            <tr t-if="count">
-                                <td colspan="100">Project: <strong t-esc="pr[1]"/>
-                                </td>
-                            </tr>
-                            <t t-foreach="docs" t-as="t">
-                                <tr t-if="pr[0]==t.project_id.id">
-                                    <td><span t-field="t.name"/></td>
-                                    <td><span t-field="t.planned_hours"/></td>
-                                    <td><span t-field="t.effective_hours"/></td>
-                                    <td><span t-field="t.remaining_hours"/></td>
-                                    <td><span t-field="t.user_id"/></td>
-                                    <td><span t-field="t.date_assign"/></td>
-                                    <td><span t-field="t.date_deadline"/></td>
-                                    <td><span t-field="t.stage_id"/></td>
+                        </tr>
+                        <!-- Table rows -->
+                        <tbody>
+                            <t t-foreach="docs[0].get_task_recs(doc_ids)[1:]" t-as="rec">
+                                <tr>
+                                    <t t-foreach="docs[0].get_task_recs(doc_ids)[0]" t-as="k">
+                                        <td><span t-esc="rec[k]"/></td>
+                                    </t>
                                 </tr>
                             </t>
-                        </t>
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
             </t>
         </template>
     </data>

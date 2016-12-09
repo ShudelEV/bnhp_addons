@@ -3,7 +3,7 @@
 #
 ##############################################################################
 {
-    'name': 'Project Tasks Sequrity',
+    'name': 'Project Task Security',
     'version': '1.0.0',
     'category': 'Project Management',
     'sequence': 16,
@@ -15,7 +15,7 @@
         'hr'
     ],
     'data': [
-        'sequrity/project_security.xml',
+        'security/project_security.xml',
         'project_view.xml',
     ],
     'demo': [],
