@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_task_project_user_pivot_inherited" model="ir.ui.view">
+            <field name="name">Report Project Task User Pivot Inherited</field>
+            <field name="model">report.project.task.user</field>
+            <field name="inherit_id" ref="project.view_task_project_user_pivot" />
+            <field name="arch" type="xml">
+                <field name="project_id" position="after">
+                    <field name="section_id" type="row"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_task_project_user_search_inherited" model="ir.ui.view">
+            <field name="name">Report Project Task User Search Inherited</field>
+            <field name="model">report.project.task.user</field>
+            <field name="inherit_id" ref="project.view_task_project_user_search" />
+            <field name="arch" type="xml">
+                <field name="project_id" position="after">
+                    <field name="section_id" />
+                    <field name="phase_id" />
+                </field>
+                <filter name="project" position="after">
+                    <filter string="Section" name="section" context="{'group_by':'section_id'}" />
+                    <filter string="Phase" name="phase" context="{'group_by':'phase_id'}" />
+                </filter>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
