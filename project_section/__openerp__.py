@@ -27,6 +27,7 @@ Add project sections
         'views/project_section_view.xml',
         'views/project_section_list_view.xml',
         'views/project_task_section_view.xml',
+        # 'report/project_task_report_view.xml',
     ],
     'demo': [],
     'test': [],

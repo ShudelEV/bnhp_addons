@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <!--View Tasks with Section (as "Реестр задач")-->
+        <!--View Tasks with Section-->
 
         <record id="view_task_section_tree2_inherited" model="ir.ui.view">
             <field name="name">Project Task Section Tree Inherited</field>
@@ -16,12 +16,6 @@
                 <field name="planned_hours" position="after">
                     <field name="remaining_hours" invisible='1'/>
                     <field name="effective_hours" widget="float_time" sum="Spent Hours"/>
-                </field>
-                <field name="progress" position="after">
-                    <field name="w_rate"/>
-                    <field name="lab" widget="float_time" sum="Total hours:"/>
-                    <field name="pl_cost" sum="Total:"/>
-                    <field name="fact_cost" sum="Total:"/>
                 </field>
             </field>
         </record>

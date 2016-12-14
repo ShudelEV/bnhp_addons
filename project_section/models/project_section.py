@@ -7,6 +7,7 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+
 class ProjectSection(models.Model):
     _name = 'project.section'
     _description = 'Project Sections'
@@ -36,11 +37,9 @@ class ProjectSection(models.Model):
 
     project_section_id = fields.Many2one('project.section.list',
                                          string='Section', ondelete='restrict', index=True, required=True)
-    project_id = fields.Many2one('project.project', string='Project',
-                                 required=True, ondelete='cascade')
-    project_task_ids = fields.One2many('project.task', 'section_id',
-                                       string='Task', copy='False')
-    #monetary field, wage-rate/ставка
+    project_id = fields.Many2one('project.project', string='Project', required=True, ondelete='cascade')
+    project_task_ids = fields.One2many('project.task', 'section_id', string='Task', copy='False')
+    # monetary field, wage-rate/ставка
     # currency_id = fields.Many2one('res.currency', string='Currency')
     wage_rate = fields.Float('Rate',
                                 # currency_field='currency_id',

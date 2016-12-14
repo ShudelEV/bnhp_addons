@@ -11,8 +11,8 @@
                 <xpath expr="//notebook" position="inside">
                     <page string="Project Section">
                         <field name="section_line">
-                            <tree string="Section Lines">
-                                  <!--editable="bottom">-->
+                            <tree string="Section Lines"
+                                  editable="bottom">
                                 <field name="project_section_id" options="{'no_create': True}"/>
                                 <field name="labor"/>
                                 <field name="wage_rate"/>
