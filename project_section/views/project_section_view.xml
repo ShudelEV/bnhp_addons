@@ -8,9 +8,9 @@
             <field name="model">project.section</field>
             <field name="arch" type="xml">
                 <tree string="Section">
-                    <field name="project_task_ids"/>
                     <field name="project_section_id"/>
                     <field name="project_id"/>
+                    <field name="project_task_ids"/>
                     <field name="labor" sum="Сумма"/>
                     <field name="wage_rate"/>
                     <field name="planned_cost" sum="Сумма"/>
@@ -47,12 +47,24 @@
                     <field name="project_id"/>
                     <field name="project_task_ids"/>
                     <group expand="1" string="Group By">
-                        <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
-                        <filter string="Task" context="{'group_by':'project_task_ids'}"/>
+                        <filter string="Project" name="group_project" context="{'group_by':'project_id'}"/>
+                        <!--<filter string="Task" name="group_task" context="{'group_by':'project_task_ids'}"/>-->
                     </group>
                 </search>
             </field>
         </record>
+
+        <record id="project_contract_tree_act" model="ir.actions.act_window">
+            <field name="name">Sections</field>
+            <field name="res_model">project.section</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="section_view_tree"/>
+            <field name="context">{'search_default_group_project': 1}</field>
+        </record>
+
+        <!--<menuitem action="project_contract_tree_act" id="menu_project_contract"-->
+                  <!--parent="project_contract.menu_contract_management" sequence="3" />-->
+
 
     </data>
 </openerp>

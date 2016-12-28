@@ -9,21 +9,23 @@
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                    <page string="Project Section">
+                    <page name="budget" string="Budget">
                         <field name="section_line">
-                            <tree string="Section Lines"
-                                  editable="bottom">
+                            <tree string="Section Lines" editable="bottom">
                                 <field name="project_section_id" options="{'no_create': True}"/>
-                                <field name="labor"/>
-                                <field name="wage_rate"/>
-                                <field name="planned_cost"/>
+                                <field name="labor" sum="Total Estimate Laboriousness"/>
+                                <field name="wage_rate" />
+                                <field name="labor_int" sum="Total Internal Laboriousness"/>
+                                <field name="wage_rate_int" />
+                                <field name="planned_cost" sum="Total Estimate Cost"/>
+                                <field name="planned_cost_int" sum="Total Internal Cost"/>
                             </tree>
                         </field>
+                        <h3>
                         <group class="oe_subtotal_footer oe_right">
-                            <field name="amount_total_labor"/>
-                            <field name="amount_total_cost" widget="monetary"
-                                   options="{'currency_field': 'currency_id'}"/>
+                            <field name="profit" />
                         </group>
+                        </h3>
                     </page>
                 </xpath>
             </field>

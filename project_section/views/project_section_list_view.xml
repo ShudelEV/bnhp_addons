@@ -30,7 +30,7 @@
         </record>
 
         <record id="open_section_list_tree" model="ir.actions.act_window">
-            <field name="name">Reference book of sections</field>
+            <field name="name">Catalog of Sections</field>
             <field name="res_model">project.section.list</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="section_list_view_tree" />

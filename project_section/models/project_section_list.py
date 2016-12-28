@@ -4,9 +4,11 @@
 ##############################################################################
 from openerp import models, fields
 
+
 class ProjectSectionList(models.Model):
+
     _name = 'project.section.list'
-    _description = 'List of Project Sections'
+    _description = 'Catalog of Sections'
     _order = 'sequence'
     _rec_name = 'short_name'
     _sql_constraints = [

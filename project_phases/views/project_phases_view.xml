@@ -2,17 +2,18 @@
 <openerp>
     <data>
 
-        <!-- Phase -->
+        <!-- Stage -->
         <record id="edit_project_phase_tree" model="ir.ui.view">
             <field name="name">project.phase.tree</field>
             <field name="model">project.project</field>
-            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="inherit_id" ref="project_section.edit_project_section"/>
+            <!--<field name="priority">20</field>-->
             <field name="arch" type="xml">
-                <xpath expr="//notebook" position="inside">
-                    <page string="Стадии Проекта">
+                <xpath expr="//page[@name='budget']" position="after">
+                    <page name="stage" string="Stages">
                         <field name="phase_line">
-                            <tree string="Phases Lines" editable="bottom">
-                                <field name="phase_id"/>
+                            <tree string="Phase Lines" editable="bottom">
+                                <field name="phase_id" options="{'no_create': True}" />
                                 <field name="revenue"/>
                                 <field name="date_contract"/>
                             </tree>
@@ -30,22 +31,22 @@
             <field name="name">project.phase.form</field>
             <field name="model">project.phases</field>
             <field name="arch" type="xml">
-                <form string="Форма для заполнения Стадии Проекта">
+                <form string="Project Stage Form">
                     <sheet>
                         <group>
                             <group>
-                                <field name="phase_id" placeholder="Название Стадии"/>
+                                <field name="phase_id" placeholder="Name"/>
                                 <field name="project_phase_line_id"/>
                             </group>
                             <group>
-                                <field name="revenue" placeholder="Доход"/>
+                                <field name="revenue"/>
                             </group>
                             <group>
-                                <field name="date_contract" placeholder="Дата по контракту"/>
-                                <field name="date_accomplish" placeholder="Фактическая дата"/>
+                                <field name="date_contract" />
+                                <field name="date_accomplish" />
                             </group>
                             <group>
-                                <field name="gip"/>
+                                <field name="project_manager"/>
                                 <field name="tasks_count"/>
                                 <field name="tasks_completed"/>
                                 <field name="accomplish"/>
@@ -60,18 +61,16 @@
             <field name="name">project.phase.tree</field>
             <field name="model">project.phases</field>
             <field name="arch" type="xml">
-                <tree string="Список Стадий">
-                    <field name="project_phase_line_id" placeholder="Выбор Проекта"
-                           options="{'no_create': True}"/>
-                    <field name="gip" placeholder="ГИП"/>
-                    <field name="phase_id" placeholder="Выбор Стадии"
-                           options="{'no_create': True}"/>
-                    <field name="revenue" placeholder="Доход по Стадии" sum="Total"/>
-                    <field name="date_contract" placeholder="Дата по контракту"/>
-                    <field name="date_accomplish" placeholder="Фактическая дата"/>
-                    <field name="tasks_count"/>
-                    <field name="tasks_completed"/>
-                    <field name="accomplish" widget="progressbar"/>
+                <tree string="Catalog of Stages">
+                    <field name="project_phase_line_id" options="{'no_create': True}" />
+                    <field name="project_manager" />
+                    <field name="phase_id" options="{'no_create': True}" />
+                    <field name="revenue" sum="Total" />
+                    <field name="date_contract" />
+                    <field name="date_accomplish" />
+                    <field name="tasks_count" />
+                    <field name="tasks_completed" />
+                    <field name="accomplish" widget="progressbar" />
                     <field name="diff_days" />
                 </tree>
             </field>
@@ -81,13 +80,12 @@
             <field name="name">project.phase.pivot</field>
             <field name="model">project.phases</field>
             <field name="arch" type="xml">
-                <pivot string="Таблица Проектов по Стадиям">
+                <pivot string="Project Stage Pivot">
                     <field name="project_phase_line_id" type="main_row"/>
-                    <field name="gip" type="col"/>
+                    <field name="project_manager" type="col"/>
                     <field name="phase_id" type="col"/>
                     <field name="diff_days" type="measure"/>
                     <field name="revenue" type="measure"/>
-
                     <!--<field name="date_contract" type="measure" />-->
                     <!--<field name="date_accomplish" store="1" type="measure" interwal="day"/>-->
                 </pivot>
@@ -98,9 +96,9 @@
             <field name="name">project.phase.graph</field>
             <field name="model">project.phases</field>
             <field name="arch" type="xml">
-                <graph string="Графики Проектов по Стадиям" type="pivot">
+                <graph string="Project Stage Graph" type="pivot">
                     <field name="project_phase_line_id" type="row"/>
-                    <field name="gip" type="row"/>
+                    <field name="project_manager" type="row"/>
                     <field name="phase_id" type="row"/>
                     <field name="revenue" type="measure"/>
                     <field name="date_contract" type="measure" interwal="day"/>
@@ -117,25 +115,25 @@
             <field name="model">project.phases</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="project_phase_line_id"/>
-                    <field name="gip"/>
-                    <field name="phase_id"/>
-                    <field name="revenue"/>
-                    <field name="date_contract" type="row"/>
-                    <field name="date_accomplish"/>
+                    <field name="project_phase_line_id" />
+                    <field name="project_manager" />
+                    <field name="phase_id" />
+                    <field name="revenue" />
+                    <field name="date_contract" type="row" />
+                    <field name="date_accomplish" />
                 </search>
             </field>
         </record>
 
         <record id="open_phase_tree" model="ir.actions.act_window">
-            <field name="name">Проект/Стадия</field>
+            <field name="name">Stages</field>
             <field name="res_model">project.phases</field>
             <field name="view_mode">tree,pivot,graph</field>
             <field name="view_id" ref="phase_view_tree"/>
         </record>
 
-        <menuitem action="open_phase_tree" id="menu_phase_tree_view" parent="project.menu_project_config" sequence="9"/>
-
+        <menuitem action="open_phase_tree" id="menu_phase_tree_view"
+                  parent="project_contract.menu_contract_management" sequence="2"/>
 
     </data>
 </openerp>

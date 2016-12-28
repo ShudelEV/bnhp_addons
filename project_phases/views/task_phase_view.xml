@@ -10,7 +10,7 @@
                 <field name="project_id" position="after">
                     <field name="phase_id"
                            options="{'no_create': True}"
-                           domain="[('project_phase_line_id','like', project_id)]"/>
+                           domain="[('project_phase_line_id','=', project_id)]"/>
                 </field>
             </field>
         </record>

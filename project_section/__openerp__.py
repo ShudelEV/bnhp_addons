@@ -18,6 +18,7 @@ Add project sections
     'depends': [
         'project',
         'project_timesheet',
+        'project_contract',
         'decimal_precision',
     ],
     'data': [

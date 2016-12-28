@@ -7,10 +7,9 @@
         </record>
 
         <record id="project_phase2" model="catalog.phases">
-            <field name="sequence">10</field>
+            <field name="sequence">20</field>
             <field name="name">Г/г Изыскания</field>
         </record>
-
 
     </data>
 </openerp>

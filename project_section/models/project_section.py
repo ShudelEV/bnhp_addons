@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 
 
 class ProjectSection(models.Model):
+
     _name = 'project.section'
     _description = 'Project Sections'
     _rec_name = 'project_section_id'
@@ -39,15 +40,23 @@ class ProjectSection(models.Model):
                                          string='Section', ondelete='restrict', index=True, required=True)
     project_id = fields.Many2one('project.project', string='Project', required=True, ondelete='cascade')
     project_task_ids = fields.One2many('project.task', 'section_id', string='Task', copy='False')
-    # monetary field, wage-rate/ставка
     # currency_id = fields.Many2one('res.currency', string='Currency')
-    wage_rate = fields.Float('Rate',
-                                # currency_field='currency_id',
-                                help="Cost of this section")
-    labor = fields.Float(digits=(6, 2), string="Laboriousness", help="Laboriousness of this section")
-    planned_cost = fields.Float(string="Planned cost", compute='_taken_cost')
 
-    @api.depends('wage_rate', 'labor')
-    def _taken_cost(self):
+    labor = fields.Float(digits=(6, 2), string="Estimate Laboriousness",
+                         help="Laboriousness of this Section according to the Estimate")
+    wage_rate = fields.Float('Estimate Rate',
+                                # currency_field='currency_id',
+                                help="Cost according to the Estimate")
+    planned_cost = fields.Float(string="Estimate Cost", compute='_take_cost')
+    labor_int = fields.Float(digits=(6, 2), string="Internal Laboriousness",
+                             help="Internal Laboriousness of this Section")
+    wage_rate_int = fields.Float('Internal Rate',
+                                # currency_field='currency_id',
+                                help="Internal Cost of this Section")
+    planned_cost_int = fields.Float(string="Internal Cost", compute='_take_cost')
+
+    @api.depends('labor', 'wage_rate', 'labor_int', 'wage_rate_int')
+    def _take_cost(self):
         for record in self:
-            record.planned_cost = record.wage_rate * record.labor
+            record.planned_cost = record.labor * record.wage_rate
+            record.planned_cost_int = record.labor_int * record.wage_rate_int

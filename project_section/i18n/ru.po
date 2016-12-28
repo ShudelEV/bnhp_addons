@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 12:15+0000\n"
-"PO-Revision-Date: 2016-12-05 15:27+0300\n"
+"POT-Creation-Date: 2016-12-27 10:47+0000\n"
+"PO-Revision-Date: 2016-12-28 15:15+0300\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
 "Language: ru\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_task_fact_cost
@@ -40,10 +40,15 @@ msgid "Actual cost"
 msgstr "Фактическая стоимость"
 
 #. module: project_section
+#: model:ir.ui.view,arch_db:project_section.edit_project_section
+msgid "Budget"
+msgstr "Бюджет"
+
+#. module: project_section
 #: model:ir.model.fields,help:project_section.field_project_section_wage_rate
 #: model:ir.model.fields,help:project_section.field_project_task_w_rate
-msgid "Cost of this section"
-msgstr "Стоимость данного раздела"
+msgid "Cost according to the Estimate"
+msgstr "Себестоимость по смете"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_section_create_uid
@@ -61,17 +66,22 @@ msgstr "Создан"
 #: model:ir.model.fields,field_description:project_section.field_project_section_display_name
 #: model:ir.model.fields,field_description:project_section.field_project_section_list_display_name
 msgid "Display Name"
-msgstr "Отображаемое Имя"
+msgstr "Отображаемое имя"
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_project_amount_total_labor
-msgid "Full laboriousness"
-msgstr "Полная трудоемкость"
+#: model:ir.model.fields,field_description:project_section.field_project_section_planned_cost
+msgid "Estimate Cost"
+msgstr "Себестоимость по смете"
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_project_amount_total_cost
-msgid "Full planned cost"
-msgstr "Полная план. стоимость"
+#: model:ir.model.fields,field_description:project_section.field_project_section_labor
+msgid "Estimate Laboriousness"
+msgstr "Трудоемкость по смете"
+
+#. module: project_section
+#: model:ir.model.fields,field_description:project_section.field_project_section_wage_rate
+msgid "Estimate Rate"
+msgstr "Ставка по смете"
 
 #. module: project_section
 #: model:ir.ui.view,arch_db:project_section.view_section_project_search
@@ -85,15 +95,35 @@ msgid "ID"
 msgstr "ID"
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_section_labor
-msgid "Laboriousness"
-msgstr "Трудоемкость"
+#: model:ir.model.fields,field_description:project_section.field_project_section_planned_cost_int
+msgid "Internal Cost"
+msgstr "Себестоимость внутр."
+
+#. module: project_section
+#: model:ir.model.fields,help:project_section.field_project_section_wage_rate_int
+msgid "Internal Cost of this Section"
+msgstr "Внутренняя стоимость данного раздела"
+
+#. module: project_section
+#: model:ir.model.fields,field_description:project_section.field_project_section_labor_int
+msgid "Internal Laboriousness"
+msgstr "Трудоемкость внутр."
+
+#. module: project_section
+#: model:ir.model.fields,help:project_section.field_project_section_labor_int
+msgid "Internal Laboriousness of this Section"
+msgstr "Внутренняя трудоемкость данного раздела"
+
+#. module: project_section
+#: model:ir.model.fields,field_description:project_section.field_project_section_wage_rate_int
+msgid "Internal Rate"
+msgstr "Ставка внутр."
 
 #. module: project_section
 #: model:ir.model.fields,help:project_section.field_project_section_labor
 #: model:ir.model.fields,help:project_section.field_project_task_lab
-msgid "Laboriousness of this section"
-msgstr "Трудоемкость данного раздела"
+msgid "Laboriousness of this Section according to the Estimate"
+msgstr "Трудоемкость данного раздела по смете"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_section___last_update
@@ -115,8 +145,8 @@ msgstr "Последний раз обновлено"
 
 #. module: project_section
 #: model:ir.model,name:project_section.model_project_section_list
-msgid "List of Project Sections"
-msgstr "Справочник разделов"
+msgid "Catalog of Sections"
+msgstr "Каталог разделов"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_section_list_long_name
@@ -129,15 +159,28 @@ msgid "Long name must be unique."
 msgstr "Полное название должено быть уникальным."
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_section_planned_cost
 #: model:ir.model.fields,field_description:project_section.field_project_task_pl_cost
 msgid "Planned cost"
-msgstr "Планируемые часы"
+msgstr "Планируемые Себестоимость"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_task_lab
 msgid "Planned laboriousness"
 msgstr "Планируемая трудоемкость"
+
+#. module: project_section
+#: model:ir.model.fields,field_description:project_section.field_project_project_profit
+msgid "Profitability"
+msgstr "Рентабельность"
+
+#. module: project_section
+#: model:ir.model.fields,help:project_section.field_project_project_profit
+msgid ""
+"Profitability = (Total_Estimate_Cost - Total_Internal_Cost) / "
+"Total_Estimate_Cost"
+msgstr ""
+"Рентабельность = (Полная_Себестоимость_по_Смете - "
+"Полная_Себестоимость_Внутренняя) / Полная_Себестоимость_по_Смете"
 
 #. module: project_section
 #: model:ir.model,name:project_section.model_project_project
@@ -147,17 +190,11 @@ msgid "Project"
 msgstr "Проект"
 
 #. module: project_section
-#: model:ir.ui.view,arch_db:project_section.edit_project_section
-msgid "Project Section"
-msgstr "Раздел проекта"
-
-#. module: project_section
 #: model:ir.model,name:project_section.model_project_section
 msgid "Project Sections"
 msgstr "Разделы проекта"
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_section_wage_rate
 #: model:ir.model.fields,field_description:project_section.field_project_task_w_rate
 msgid "Rate"
 msgstr "Ставка"
@@ -165,8 +202,8 @@ msgstr "Ставка"
 #. module: project_section
 #: model:ir.actions.act_window,name:project_section.open_section_list_tree
 #: model:ir.ui.menu,name:project_section.menu_section_list_view
-msgid "Reference book of sections"
-msgstr "Справочник разделов"
+msgid "Catalog of Sections"
+msgstr "Каталог разделов"
 
 #. module: project_section
 #: model:ir.actions.act_window,name:project_section.open_task_section_form
@@ -175,6 +212,7 @@ msgid "Register of Tasks"
 msgstr "Реестр задач"
 
 #. module: project_section
+#: model:ir.model.fields,field_description:project_section.field_project_project_section_line
 #: model:ir.model.fields,field_description:project_section.field_project_section_project_section_id
 #: model:ir.model.fields,field_description:project_section.field_project_task_section_id
 #: model:ir.ui.view,arch_db:project_section.section_view_form
@@ -188,16 +226,9 @@ msgid "Section Analysis"
 msgstr "Анализ разделов"
 
 #. module: project_section
-#: model:ir.model.fields,field_description:project_section.field_project_project_section_line
 #: model:ir.ui.view,arch_db:project_section.edit_project_section
 msgid "Section Lines"
 msgstr "Записи разделов"
-
-#. module: project_section
-#: model:ir.actions.act_window,name:project_section.open_section_form
-#: model:ir.ui.menu,name:project_section.menu_section_view
-msgid "Sections"
-msgstr "Разделы"
 
 #. module: project_section
 #: model:ir.model.fields,field_description:project_section.field_project_section_list_sequence
@@ -220,11 +251,6 @@ msgid "Spent Hours"
 msgstr "Затраченные часы"
 
 #. module: project_section
-#: model:ir.ui.view,arch_db:project_section.section_view_form
-msgid "Sum"
-msgstr "Сумма"
-
-#. module: project_section
 #: model:ir.model,name:project_section.model_project_task
 #: model:ir.model.fields,field_description:project_section.field_project_section_project_task_ids
 #: model:ir.ui.view,arch_db:project_section.view_section_project_search
@@ -232,11 +258,42 @@ msgid "Task"
 msgstr "Задача"
 
 #. module: project_section
-#: model:ir.ui.view,arch_db:project_section.view_task_section_tree2_inherited
-msgid "Total hours:"
-msgstr "Общее время:"
+#: model:ir.ui.view,arch_db:project_section.edit_project_section
+msgid "Total Estimate Cost"
+msgstr "Общая себестоимость по смете"
 
 #. module: project_section
-#: model:ir.ui.view,arch_db:project_section.view_task_section_tree2_inherited
-msgid "Total:"
-msgstr "Итого:"
+#: model:ir.ui.view,arch_db:project_section.edit_project_section
+msgid "Total Estimate Laboriousness"
+msgstr "Общая трудоемкость по смете"
+
+#. module: project_section
+#: model:ir.ui.view,arch_db:project_section.edit_project_section
+msgid "Total Internal Cost"
+msgstr "Общая внутренняя себестоимость"
+
+#. module: project_section
+#: model:ir.ui.view,arch_db:project_section.edit_project_section
+msgid "Total Internal Laboriousness"
+msgstr "Общая внутренняя трудоемкость"
+
+#~ msgid "Full laboriousness"
+#~ msgstr "Полная трудоемкость"
+
+#~ msgid "Full planned cost"
+#~ msgstr "Полная план. стоимость"
+
+#~ msgid "Project Section"
+#~ msgstr "Раздел проекта"
+
+#~ msgid "Sections"
+#~ msgstr "Разделы"
+
+#~ msgid "Sum"
+#~ msgstr "Сумма"
+
+#~ msgid "Total hours:"
+#~ msgstr "Общее время:"
+
+#~ msgid "Total:"
+#~ msgstr "Итого:"
